@@ -1,7 +1,11 @@
 #ifndef XV6_H_
 #define XV6_H_
 
-static const int REGISTERS_COUNT = 33;
+#include <stdint.h>
+
+#include "adt/vec.h"
+
+#define REGISTERS_COUNT 33
 
 enum register_t {
         reg_x0,
@@ -42,7 +46,7 @@ enum register_t {
 struct emulator_t {
         uint64_t registers[REGISTERS_COUNT];
         vec_t(uint8_t) memory;
-        uint_t pc;
+        unsigned int pc;
 };
 
 struct emulator_t* emulatorNew();
