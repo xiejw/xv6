@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+#include "adt/sds.h"
 #include "adt/vec.h"
 
 #define REGISTERS_COUNT 33
@@ -51,5 +52,6 @@ struct emulator_t {
 
 struct emulator_t* emulatorNew();
 void               emulatorFree(struct emulator_t*);
+void               emulatorDump(struct emulator_t*, sds_t* s);
 
 #endif
