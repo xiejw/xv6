@@ -20,6 +20,7 @@ void emulatorFree(struct emulator_t* p)
 
 void emulatorDump(struct emulator_t* em, sds_t* s)
 {
+        // dump registers.
         for (int i = 0; i < REGISTERS_COUNT; i++) {
                 if (i == REGISTERS_COUNT - 1) {
                         sdsCatPrintf(s, "reg pc: %d\n", em->registers[i]);
